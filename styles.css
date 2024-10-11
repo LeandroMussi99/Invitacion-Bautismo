@@ -1,0 +1,223 @@
+/* Importar Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap');
+
+/* Reset de Margen y Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    color: #333;
+}
+
+/* Contenedor Principal */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Títulos */
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
+    font-size: 4em; /* Ajustado */
+}
+
+h2 {
+    color: #fff;
+    margin-bottom: 30px;
+    font-size: 2em; /* Ajustado */
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100vw;
+    height: 60vh;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Controles del Slider */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255,255,255,0.7);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255,255,255,1);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Sección de Frases */
+.frase {
+    margin: 20px 0;
+    font-size: 1.2em;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+/* Imagen de Arcoíris */
+.arcoiris img {
+    width: 100%;
+    max-width: 300px;
+    margin: 20px 0;
+    border: 5px solid #fff;
+    border-radius: 50%;
+}
+
+/* Sección de Padrinos */
+.padrinos {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.padrinos h3 {
+    font-family: 'Pacifico', cursive;
+    color: #50030b;
+    margin-bottom: 10px;
+    font-size: 2em; /* Ajustado */
+}
+
+.padrinos p {
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em; /* Ajustado */
+}
+
+/* Botones de Acción */
+.actions .button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #fff;
+    color: #fda085;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.actions .button:hover {
+    background-color: #fda085;
+    color: #fff;
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5em; /* Reducir tamaño en móviles */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Reducir tamaño en móviles */
+    }
+
+    .padrinos h3 {
+        font-size: 1.5em; /* Reducir tamaño en móviles */
+    }
+
+    .actions .button {
+        padding: 10px 20px; /* Reducir padding en móviles */
+        font-size: 1em; /* Reducir tamaño de fuente en móviles */
+    }
+}
+
+/* Animación para aparecer */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.frase, .padrinos {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+/* Añadir retraso a las animaciones para un efecto secuencial */
+.frase:nth-of-type(1) {
+    animation-delay: 0.5s;
+}
+
+.arcoiris {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 1s;
+}
+
+.frase:nth-of-type(2) {
+    animation-delay: 1.5s;
+}
+
+.padrinos {
+    animation-delay: 2s;
+}
+
+.frase:nth-of-type(3) {
+    animation-delay: 2.5s;
+}
+
+/*Estrellas*/
+h1 i {
+    color: #fda085;
+    margin: 0 10px;
+    font-size: 0.8em; /* Ajustar tamaño según sea necesario */
+}
