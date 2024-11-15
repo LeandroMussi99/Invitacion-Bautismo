@@ -33,6 +33,7 @@ h1 {
     text-shadow: 2px 2px 4px #000;
     font-size: 4em;
     /* Ajustado */
+    
 }
 
 h2 {
@@ -42,12 +43,12 @@ h2 {
     /* Ajustado */
     font-family: 'Roboto', sans-serif;
     text-shadow: 2px 2px 4px #000;
+    animation: latidos 3s infinite ease-in-out;
 }
 
 /* Slider */
 
-/* Estilo para el primer slider */
-#slider1 {
+.slider-container {
     position: relative;
     width: 100vw;
     height: auto;
@@ -57,42 +58,13 @@ h2 {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Contenedor de imágenes en el slider 1 */
-#slider1 .slides img {
+.slider-container .slides img {
     width: 100%;
-    /* La imagen ocupa todo el ancho */
     height: auto;
-    /* La altura se ajusta proporcionalmente */
     object-fit: contain;
-    /* Asegura que la imagen se vea completa sin recortes */
     max-height: 100%;
-    /* Limita la altura para que no sobresalga del slider */
 }
 
-/* Estilo para el segundo slider */
-/* Contenedor del slider */
-#slider2 {
-    position: relative;
-    width: 100vw;
-    height: auto;
-    /* La altura se ajusta automáticamente */
-    margin: 0 auto 30px auto;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* Estilo de las imágenes en el slider */
-#slider2 .slides img {
-    width: 100%;
-    /* La imagen ocupa todo el ancho */
-    height: auto;
-    /* La altura se ajusta proporcionalmente */
-    object-fit: contain;
-    /* Asegura que la imagen se vea completa sin recortes */
-    max-height: 100%;
-    /* Limita la altura máxima para que no sobresalga del slider */
-}
 
 .slides {
     display: flex;
@@ -116,15 +88,11 @@ h2 {
     /* Fondo transparente */
     border: none;
     padding: 5px;
-    /* Tamaño de padding reducido */
     cursor: pointer;
     font-size: 2em;
-    /* Tamaño de la flecha */
     color: rgba(255, 255, 255, 0.5);
-    /* Color blanco con transparencia */
     z-index: 1;
     transition: color 0.3s ease;
-    /* Transición suave */
 }
 
 .prev:hover,
@@ -167,8 +135,8 @@ h2 {
 /* Imagen de Arcoíris Logo */
 .icono-arcoiris {
     width: 150px;
-    /* Ajusta según el tamaño que prefieras */
     vertical-align: middle;
+    animation: swing 2s infinite ease-in-out;
 }
 
 .icono-arcoiris:hover {
@@ -185,6 +153,7 @@ h2 {
     border-radius: 50%;
 }
 
+
 /* Sección de Padrinos */
 .padrinos {
     background-color: rgba(255, 255, 255, 0.2);
@@ -198,7 +167,7 @@ h2 {
     color: #50030b;
     margin-bottom: 10px;
     font-size: 2em;
-    /* Ajustado */
+    animation: float 3s infinite ease-in-out;
 }
 
 .padrinos p {
@@ -207,7 +176,6 @@ h2 {
     text-shadow: 1px 1px 2px #000;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
-    /* Ajustado */
 }
 
 /* Botones de Acción */
@@ -222,12 +190,29 @@ h2 {
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
     font-family: 'Roboto', sans-serif;
+    
 }
 
 .actions .button:hover {
     background-color: #fda085;
     color: #fff;
 }
+
+#confirmar {
+    animation: latidos 2s infinite ease-in-out;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.8em;
+    color: rgba(0, 0, 0, 0.4); 
+    bottom: 5px;
+    width: 100%;
+    z-index: 100;
+    pointer-events: none; 
+    font-family: 'Roboto', sans-serif; 
+}
+
 
 /* Responsividad */
 @media (max-width: 600px) {
@@ -261,41 +246,13 @@ h2 {
 
     /* Slider moviles */
 
-    #slider1 .slides img {
+    .slider-container .slides img {
         width: 100%;
-        height: auto;  /* Rellenar todo el contenedor */
-        object-fit: contain;  /* Rellenar el área sin distorsionar */
-        max-height: 100%;
-    }
-    
-
-
-    /* Estilo de las imágenes en el slider */
-    #slider2 .slides img {
-        width: 100%;
-        /* La imagen ocupa todo el ancho */
         height: auto;
-        /* La altura se ajusta proporcionalmente */
         object-fit: contain;
-        /* Asegura que la imagen se vea completa sin recortes */
         max-height: 100%;
-        /* Limita la altura máxima para que no sobresalga del slider */
     }
 
-
-}
-
-/* Animación para aparecer */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .frase,
@@ -335,4 +292,80 @@ h1 i {
     margin: 0 10px;
     font-size: 0.8em;
     /* Ajustar tamaño según sea necesario */
+}
+
+/* Animaciones */
+
+@keyframes latidos {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Crece ligeramente */
+    }
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Crece ligeramente */
+    }
+}
+
+@keyframes colorGlow {
+    0% {
+        color: #ff7eb3;
+    }
+    50% {
+        color: #ffb347;
+    }
+    100% {
+        color: #ff7eb3;
+    }
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Animación para aparecer */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
