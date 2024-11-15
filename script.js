@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         initializeSlider(sliderContainer);
     });
 
+
     const musicControl = document.getElementById("music-control");
     const backgroundMusic = document.getElementById("background-music");
 
@@ -73,6 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
+    
 
 });
