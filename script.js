@@ -59,4 +59,20 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.slider-container').forEach(sliderContainer => {
         initializeSlider(sliderContainer);
     });
+
+    const musicControl = document.getElementById("music-control");
+    const backgroundMusic = document.getElementById("background-music");
+
+    musicControl.addEventListener("click", () => {
+        if (backgroundMusic.paused) {
+            backgroundMusic.play();
+            musicControl.innerHTML = '<i class="fas fa-pause"></i>'; // Cambia al ícono de pausa
+        } else {
+            backgroundMusic.pause();
+            musicControl.innerHTML = '<i class="fas fa-play"></i>'; // Cambia al ícono de play
+        }
+    });
+
+
+
 });
