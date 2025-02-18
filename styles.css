@@ -31,7 +31,11 @@ h1 {
     font-family: 'Pacifico', cursive;
     color: #fff;
     text-shadow: 2px 2px 4px #000;
-    font-size: 4em;
+    font-size: 4em; /* Ajustado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el título y los iconos */
     /* Ajustado */
     
 }
@@ -130,6 +134,19 @@ h2 {
     padding: 15px;
     border-radius: 10px;
     font-style: italic;
+}
+
+.frase p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre corazones y texto */
+    flex-wrap: nowrap; /* Evita que se rompa en móviles */
+}
+
+.frase i {
+    font-size: 1.2em; /* Tamaño adecuado para los corazones */
+    color: white;
 }
 
 /* Imagen de Arcoíris Logo */
